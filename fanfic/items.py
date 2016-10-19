@@ -10,3 +10,15 @@ import scrapy
 
 class BookIdItem(scrapy.Item):
     book_id = scrapy.Field()
+
+
+class BookMetadataItem(scrapy.Item):
+    title = scrapy.Field()
+    username = scrapy.Field()
+    summary = scrapy.Field()
+    rated = scrapy.Field()
+    genres = scrapy.Field()
+    characters = scrapy.Field()
+    favs = scrapy.Field()
+    follows = scrapy.Field()
+    published = scrapy.Field()

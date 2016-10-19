@@ -21,8 +21,6 @@ class BookTextSpider(Spider):
 
         text = res.selector.xpath('//div[@id="storytextp"]').extract_first()
 
-        print(text)
-
         next_onclick = res.selector.xpath('//button[text()="Next >"]/@onclick').extract_first()
 
         next_href = re.search('\'(?P<url>.*)\'', next_onclick).group('url')
