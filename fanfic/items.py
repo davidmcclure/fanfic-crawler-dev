@@ -22,3 +22,10 @@ class BookMetadataItem(scrapy.Item):
     favs = scrapy.Field()
     follows = scrapy.Field()
     published = scrapy.Field()
+
+
+class BookReviewItem(scrapy.Item):
+    username = scrapy.Field()
+    chapter = scrapy.Field()
+    date = scrapy.Field()
+    content = scrapy.Field()
