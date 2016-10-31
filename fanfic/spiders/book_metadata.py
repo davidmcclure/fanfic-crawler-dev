@@ -74,5 +74,3 @@ class BookMetadataSpider(Spider):
             follows=int(labels['Follows']),
             published=labels['Published'],
         )
-
-        print(summary)

@@ -12,6 +12,11 @@ class BookIdItem(scrapy.Item):
     book_id = scrapy.Field()
 
 
+class BookChapterItem(scrapy.Item):
+    text = scrapy.Field()
+    chapter = scrapy.Field()
+
+
 class BookMetadataItem(scrapy.Item):
     title = scrapy.Field()
     username = scrapy.Field()
@@ -27,5 +32,5 @@ class BookMetadataItem(scrapy.Item):
 class BookReviewItem(scrapy.Item):
     username = scrapy.Field()
     chapter = scrapy.Field()
-    date = scrapy.Field()
+    timestamp = scrapy.Field()
     content = scrapy.Field()

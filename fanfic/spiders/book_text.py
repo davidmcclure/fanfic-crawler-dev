@@ -4,6 +4,8 @@ import re
 
 from scrapy import Spider, Request
 
+from fanfic.items import BookChapterItem
+
 class BookTextSpider(Spider):
 
     name = 'book_text'
@@ -20,6 +22,17 @@ class BookTextSpider(Spider):
         """
 
         text = res.selector.xpath('//div[@id="storytextp"]').extract_first()
+
+        chapter = int(
+            res.selector
+            .xpath('//select[@id="chap_select"]/option[@selected]/@value')
+            .extract_first()
+        )
+
+        yield BookChapterItem(
+            text=text,
+            chapter=chapter,
+        )
 
         next_onclick = res.selector.xpath('//button[text()="Next >"]/@onclick').extract_first()
 
